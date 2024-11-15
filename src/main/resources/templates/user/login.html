@@ -8,23 +8,23 @@
 </head>
 <body>
 
-    <h1 th:if="${param.error}">
-        <h1>
+
+        <h1 th:if="${param.error}">
             email 또는 비밀번호를 확인해주세요. <!--유효성검사 안해도됨-->
         </h1>
 
         <form action="/user/login" method="post" >
 
-        email:<input name="email"><br>
-<!--        <p th:if="${#fields.hasErrors('bi_eqName')}" th:errors="*{email}"  class="fieldError"></p> 유효성검사-->
+            email:<input name="email"><br>
+    <!--        <p th:if="${#fields.hasErrors('bi_eqName')}" th:errors="*{email}"  class="fieldError"></p> 유효성검사-->
 
-        password:<input name="password"><br>
-<!--        <p th:if="${#fields.hasErrors('bi_eqName')}" th:errors="*{password}"  class="fieldError"></p>-->
+            password:<input name="password"><br>
+    <!--        <p th:if="${#fields.hasErrors('bi_eqName')}" th:errors="*{password}"  class="fieldError"></p>-->
 
 
-        <button type="submit">회원가입</button>
-        <button type="button">로그인</button>
-    </form>
+            <button type="submit">로그인</button>
+            <button type="button">회원가입</button>
+        </form>
     <script>
         $("form").on("submit", function () {
             let namval = $(".name").val()
