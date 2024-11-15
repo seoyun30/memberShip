@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1 th:if="${param.error}">
+        <h1>
+            email 또는 비밀번호를 확인해주세요. <!--유효성검사 안해도됨-->
+        </h1>
+
+        <form action="/user/login" method="post" >
+
+        email:<input name="email"><br>
+<!--        <p th:if="${#fields.hasErrors('bi_eqName')}" th:errors="*{email}"  class="fieldError"></p> 유효성검사-->
+
+        password:<input name="password"><br>
+<!--        <p th:if="${#fields.hasErrors('bi_eqName')}" th:errors="*{password}"  class="fieldError"></p>-->
+
+
+        <button type="submit">회원가입</button>
+        <button type="button">로그인</button>
+    </form>
+    <script>
+        $("form").on("submit", function () {
+            let namval = $(".name").val()
+
+            if (namval.length <=2 || namval.length > 10){
+               alert("이름을 잘 입력해주세. 2글자 이상에서 10글자 이하로 작성하시오.")
+
+                return false;
+            }
+        })
+    </script>
+
+
+
+
+
+</body>
+</html>
